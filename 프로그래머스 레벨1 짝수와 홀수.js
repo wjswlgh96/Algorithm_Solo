@@ -11,5 +11,5 @@ function solution(num) {
     return num % 2 === 0 ? 'Even' : 'Odd'
 }
 
-console.log(solution(3));   //* 출력결과 : 'Odd'
-console.log(solution(4));   //* 출력결과 : 'Even'
+console.log(solution(3));   //* 결과 : 'Odd'
+console.log(solution(4));   //* 결과 : 'Even'
