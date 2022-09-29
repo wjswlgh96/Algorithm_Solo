@@ -1,2 +1,82 @@
-//? 1. Last In First Out 이라는 개념을 가진 선형 자료구조 ( 마지막에 들어간 요소가 먼저 나온다. )
-//? 2. 요소를 넣는 것을 Push, 빼는 것을 Pop, 맨 위에 있는 요소를 Top 이라고 부른다.
+//! 스택이란?
+// 1. Last In First Out 이라는 개념을 가진 선형 자료구조 ( 마지막에 들어간 요소가 먼저 나온다. )
+// 2. 요소를 넣는 것을 Push, 빼는 것을 Pop, 맨 위에 있는 요소를 Top 이라고 부른다.
+// 3. 스택 자료구조를 이용하는 가장 대표적인 것은 스택 메모리가 있다.
+// 4. Stack은 Array와 Linked List를 이용하여 표현할 수 있다.
+
+=========================================================================================================================================================
+
+/*
+    function sum(a, b) {
+        return a + b;
+    }
+
+    function print(value) {
+        console.log(value);
+    }
+
+    print(sum(5, 10));
+*/
+
+//! 실행 순서
+// 1. sum 함수가 스택 메모리에 먼저 쌓인다. (매개 변수, 반환 주소값, 지역 변수 들이 들어있다.) => sum 함수의 실행이 종료되고 값이 반환되면 스택 메모리에서 Pop 이 실행되어 제거된다.
+// 2. 이어서 print 함수가 Push 되어 스택 메모리에 쌓인다. 그 뒤에 console.log 가 Push 되어 스택 메모리에 쌓인다.
+// 3. console.log 함수가 실행되고 Pop이 되어 제거된다. 그 후에 print 함수도 정상적으로 호출되고 스택 메모리에서 제거된다.
+
+=========================================================================================================================================================
+
+//! Array로 구현
+/*
+    const stack = [];
+
+    // Push
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    console.log(stack); // [1, 2, 3]
+
+    // Pop
+    stack.pop();
+    console.log(stack); // [1, 2]
+
+    // Get Top
+    console.log(stack[stack.length - 1]) // 2
+*/
+
+=========================================================================================================================================================
+
+//! Linked List로 구현
+/*
+    class Node {
+        constructor(value) {
+            this.value = value;
+            this.next = null;
+        }
+    }
+
+    class Stack {
+        constructor() {
+            this.top = null;
+            this.size = 0;
+        }
+
+        push(value) {
+            const node = new Node(value);
+            node.next = this.top;
+            this.top = node;
+            this.size += 1;
+        }
+
+        pop() {
+            const value = this.top.value;
+            this.top = this.top.next;
+            this.size -= 1;
+            
+            return value;
+        }
+
+        size() {
+            return this.size;
+        }
+    }
+*/
